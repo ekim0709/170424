@@ -1,0 +1,36 @@
+<div class="container">
+<h1>연어가 좋아 좋아 좋아</h1>
+  <br>
+  <%=image_tag "salmon.gif" %>
+  <br>
+  <br>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">추천 연어 맛집</label>
+    <form action="/create" method="get">
+    <input name="title" type="text" class="form-control" placeholder="맛집 이름을 써주세요"><br>
+      
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">추천 이유 </label>
+    <textarea name="content" class="form-control" rows="10" id="comment" placeholder="이유를 입력해주세요"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-default">입력</button>
+</form>
+
+<table class="table table-hover" style="margin-top: 10px">
+<thead>
+    <td>이름</td>
+    <td>추천이유</td>
+</thead>
+<tbody>
+<% @list.each do |x| %>
+<tr>
+<td><%= x.name %></td>
+<td><%= x.reason %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div> <!-- end of container -->
